@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Julietta Valentina Espinoza Cerrón">
+
+<title>Tamaño de Muestra</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="Escenarios_tamaño_de_muestra_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Escenarios_tamaño_de_muestra_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="Escenarios_tamaño_de_muestra_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="Escenarios_tamaño_de_muestra_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="Escenarios_tamaño_de_muestra_files/libs/quarto-html/popper.min.js"></script>
+<script src="Escenarios_tamaño_de_muestra_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Escenarios_tamaño_de_muestra_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Escenarios_tamaño_de_muestra_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Escenarios_tamaño_de_muestra_files/libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Escenarios_tamaño_de_muestra_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Escenarios_tamaño_de_muestra_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Escenarios_tamaño_de_muestra_files/libs/bootstrap/bootstrap-9e3ffae467580fdb927a41352e75a2e0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="fullcontent quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Tamaño de Muestra</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Julietta Valentina Espinoza Cerrón </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="cálculo-de-tamaño-de-muestra" class="level1">
+<h1>Cálculo de tamaño de muestra</h1>
+<p>El cálculo de tamaño de muestra es un aspecto fundamental de un diseño de estudios, al permitir aproximar la cantidad mínima de participantes requeridos para probar la hipótesis planteada, así como validar la factibilidad del mismo.</p>
+<section id="importancia" class="level2">
+<h2 class="anchored" data-anchor-id="importancia">Importancia</h2>
+<p>La finalidad de emplear una técnica de muestreo estadístico en un trabajo de investigación, radica en emplear la inferencia estadística para extrapolar los resultados a una población objetivo.</p>
+<p>Si bien un mayor tamaño y mayor representativas de muestra, implican menor variabilidad del resultado y mayor precisión; el muestreo permite estimar el tamaño mínimo requerido para que se pueda garantizar que la hipótesis sea probada al término del estudio.</p>
+</section>
+<section id="conceptos-básicos-para-realizar-un-cálculo-de-tamaño-de-muestra" class="level2">
+<h2 class="anchored" data-anchor-id="conceptos-básicos-para-realizar-un-cálculo-de-tamaño-de-muestra">Conceptos Básicos para realizar un cálculo de Tamaño de Muestra</h2>
+<ul>
+<li><p><strong>Nivel de significancia (</strong><span class="math inline">\(\alpha\)</span><strong>):</strong> Probabilidad de rechazar la hipótesis nula cuando es verdadera. Por convención, se considera que un valor <span class="math inline">\(p&lt;0.05\)</span>, es estadísticamente significativo.</p></li>
+<li><p><strong>Poder de estudio(</strong> <span class="math inline">\(1- \beta\)</span><strong>):</strong> Capacidad del estudio para detectar un efecto real (evitar falsos positivos). Por convención, se busca el 80% o más.</p></li>
+<li><p><strong>Tamaño del Efecto Esperado:</strong> Estimación de que tan fuerte o grande será el efecto o cambio que se espera encontrar del tratamiento.</p></li>
+<li><p><strong>Variabilidad de la población:</strong> Cuantifica que tan dispersos o variados son los datos en realidad.</p></li>
+</ul>
+</section>
+<section id="objetivos-de-aprendizaje" class="level2">
+<h2 class="anchored" data-anchor-id="objetivos-de-aprendizaje">Objetivos de aprendizaje</h2>
+<p>Después de finalizar esta práctica desarrollada debería ser capaz de:</p>
+<ul>
+<li><p>Calcular de forma adecuada el tamaño de muestra</p></li>
+<li><p>Comprender los escenarios más comunes de cálculo de tamaño de muestra</p></li>
+</ul>
+</section>
+<section id="instalar-paquetes" class="level2">
+<h2 class="anchored" data-anchor-id="instalar-paquetes">Instalar paquetes</h2>
+<section id="instalar-paquetes-1" class="level3">
+<h3 class="anchored" data-anchor-id="instalar-paquetes-1">Instalar paquetes</h3>
+<p>Para calcular tamaños de muestra en Quarto necesitaremos instalar el paquete “pwr” y “pwr2”</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("pwr2") </span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("pwr")</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="cargar-paquetes" class="level3">
+<h3 class="anchored" data-anchor-id="cargar-paquetes">Cargar paquetes</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pwr) <span class="co">#cálculos básicos de potencia usando #tamaños de efectos y notaciones de Cohen </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'pwr' was built under R version 4.5.3</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pwr2) <span class="co">#cálculo para ANOVA de una y dos vías</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Existen 8 escenarios posibles donde se requiera el cálculo de tamaño de muestra:</p>
+</section>
+</section>
+<section id="escenario-1-muestra-para-estimar-incrementos-de-una-media-en-una-misma-población" class="level2">
+<h2 class="anchored" data-anchor-id="escenario-1-muestra-para-estimar-incrementos-de-una-media-en-una-misma-población">Escenario 1: Muestra para estimar incrementos de una media en una misma población</h2>
+<p>Este escenario tiene la finalidad de evaluar si la media de un grupo independiente cambia respecto a un valor referencial, usualmente obtenido de la literatura.</p>
+<section id="resolución" class="level3">
+<h3 class="anchored" data-anchor-id="resolución">Resolución</h3>
+<ol type="1">
+<li><p><strong>Cálculo del efecto del diseño</strong></p>
+<p><span class="math display">\[ d = |u1 - u2|/sd \]</span></p></li>
+<li><p><strong>Cálculo del tamaño de muestra</strong></p>
+<p>Uso de la función <em>pwr.t.test</em></p></li>
+<li><p><strong>Cálculo del poder de estudio</strong></p>
+<p>Uso de la función <em>pwr.t.test</em></p></li>
+<li><p><strong>Cálculo del efecto con los valores ya encontrados</strong></p>
+<p>Uso de la función <em>pwr.t.test</em></p></li>
+</ol>
+</section>
+<section id="caso-practico" class="level3">
+<h3 class="anchored" data-anchor-id="caso-practico">Caso practico</h3>
+<p>Un programa nutricional busca aumentar los niveles de hemoglobina de un valor base de <span class="math inline">\(20 \text{ mg/dL}\)</span> hasta <span class="math inline">\(30 \text{ mg/dL}\)</span> (diferencia de <span class="math inline">\(10\)</span>), con una desviación estándar de <span class="math inline">\(10\text{ mg/dL}\)</span></p>
+<p>Supuestos:</p>
+<ul>
+<li>2 colas</li>
+<li>Ho: m=m0 &lt;- Hipótesis nula, donde m es la media</li>
+<li>Ha: m!=m0, m=20 &lt;- Hipótesis nula</li>
+<li>diff=10 (o ma=30) &lt;- Diferencia o Hipótesis nula</li>
+<li>sd=10 &lt;- Desviación estándar</li>
+<li>p=0.05 &lt;- Nivel de significancia</li>
+<li>power=0.80 &lt;- Poder de estudio</li>
+</ul>
+<p>Para resolverlo, empleamos los pasos ya mencionados:</p>
+<ol type="1">
+<li><strong>Cálculo del efecto del diseño</strong></li>
+</ol>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>d <span class="ot">=</span> (<span class="dv">30</span> <span class="sc">-</span> <span class="dv">20</span>)<span class="sc">/</span><span class="dv">10</span> </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>d</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1</code></pre>
+</div>
+</div>
+<ol start="2" type="1">
+<li><strong>Cálculo del tamaño de muestra mínimo requerido (n)</strong></li>
+</ol>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pwr.t.test</span>(<span class="at">d=</span>d, <span class="at">sig.level=</span><span class="fl">0.05</span>, <span class="at">power=</span><span class="fl">0.80</span>, <span class="at">type=</span><span class="st">'one.sample'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+     One-sample t test power calculation 
+
+              n = 9.93785
+              d = 1
+      sig.level = 0.05
+          power = 0.8
+    alternative = two.sided</code></pre>
+</div>
+</div>
+<ol start="3" type="1">
+<li><strong>Cálculo del poder de estudio con el tamaño de muestra mínimo</strong></li>
+</ol>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pwr.t.test</span>(<span class="at">n=</span><span class="dv">20</span>, <span class="at">d=</span>d, <span class="at">sig.level=</span><span class="fl">0.05</span>, <span class="at">type=</span><span class="st">'one.sample'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+     One-sample t test power calculation 
+
+              n = 20
+              d = 1
+      sig.level = 0.05
+          power = 0.9885913
+    alternative = two.sided</code></pre>
+</div>
+</div>
+<ol start="4" type="1">
+<li><strong>Cálculo del efecto de diseño con los valores de tamaño de muestra y poder de estudio específicos</strong></li>
+</ol>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pwr.t.test</span>(<span class="at">n =</span> <span class="dv">20</span>, <span class="at">sig.level =</span> <span class="fl">0.05</span>, <span class="at">power =</span> <span class="fl">0.80</span>, <span class="at">type =</span> <span class="st">'one.sample'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+     One-sample t test power calculation 
+
+              n = 20
+              d = 0.6604413
+      sig.level = 0.05
+          power = 0.8
+    alternative = two.sided</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="escenario-2-muestra-para-estimar-incrementos-de-una-proporción-en-una-misma-población" class="level2">
+<h2 class="anchored" data-anchor-id="escenario-2-muestra-para-estimar-incrementos-de-una-proporción-en-una-misma-población">Escenario 2: Muestra para estimar incrementos de una proporción en una misma población</h2>
+<p>Este escenario se emplea para medir si la proporción observada en una sola población difiere de una proporción teórica o esperada.</p>
+<section id="resolución-1" class="level3">
+<h3 class="anchored" data-anchor-id="resolución-1">Resolución</h3>
+<ol type="1">
+<li><p><strong>Cálculo del efecto del diseño</strong>: <span class="math display">\[h = 2 \cdot \arcsin(\sqrt{p1}) - 2 \cdot \arcsin(\sqrt{p2})\]</span></p></li>
+<li><p><strong>Cálculo del tamaño de muestra</strong>:</p>
+<p>Uso de la función <code>pwr.p.test</code></p></li>
+<li><p><strong>Cálculo del poder de estudio</strong>:</p>
+<p>Uso de la función <code>pwr.p.test</code></p></li>
+<li><p><strong>Cálculo del efecto con los valores ya encontrados</strong>:</p>
+<p>Uso de la función <code>pwr.p.test</code></p></li>
+</ol>
+</section>
+<section id="caso-práctico" class="level3">
+<h3 class="anchored" data-anchor-id="caso-práctico">Caso práctico</h3>
+<p>Un estudio epidemiológico busca estimar una seroprevalencia de <span class="math inline">\(20\%\)</span> con un incremento de precisión del <span class="math inline">\(2.5\%\)</span> (alcanzando un valor esperado del <span class="math inline">\(22.5\%\)</span>)[cite: 1].</p>
+<p><strong>Supuestos</strong></p>
+<ul>
+<li><p><strong>2 colas</strong></p></li>
+<li><p><strong>Ho: p=p0</strong> &lt;- Hipótesis nula, donde p es la proporción</p></li>
+<li><p><strong>Ha: p!=p0, p=20%</strong> &lt;- Hipótesis alterna</p></li>
+<li><p><strong>diff=2.5% (o p0=22.5%)</strong> &lt;- Valor esperado tras la precisión</p></li>
+<li><p><strong>p=0.05</strong> &lt;- Nivel de significancia</p></li>
+<li><p><strong>power=0.80</strong> &lt;- Poder de estudio</p></li>
+</ul>
+<p>Para resolverlo, empleamos los pasos ya mencionados:</p>
+<p>-&gt; <strong>Cálculo del efecto de diseño (h):</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>h<span class="ot">&lt;-</span><span class="fu">ES.h</span>(<span class="fl">0.225</span>,<span class="fl">0.20</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>h</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.06113687</code></pre>
+</div>
+</div>
+<p>-&gt; <strong>n:</strong> Calculamos el tamaño de muestra para el escenario 2.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pwr.p.test</span>(<span class="at">h=</span>h , <span class="at">power=</span><span class="fl">0.80</span>, <span class="at">sig.level=</span><span class="fl">0.05</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+     proportion power calculation for binomial distribution (arcsine transformation) 
+
+              h = 0.06113687
+              n = 2099.908
+      sig.level = 0.05
+          power = 0.8
+    alternative = two.sided</code></pre>
+</div>
+</div>
+<p>-&gt; <strong>Poder:</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pwr.p.test</span>(<span class="at">h=</span>h , <span class="at">n=</span><span class="dv">400</span>, <span class="at">sig.level=</span><span class="fl">0.05</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+     proportion power calculation for binomial distribution (arcsine transformation) 
+
+              h = 0.06113687
+              n = 400
+      sig.level = 0.05
+          power = 0.2312218
+    alternative = two.sided</code></pre>
+</div>
+</div>
+<p>-&gt; <strong>Efecto de diseño:</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pwr.p.test</span>(<span class="at">n=</span><span class="dv">400</span>, <span class="at">sig.level=</span><span class="fl">0.05</span>, <span class="at">power=</span>.<span class="dv">80</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+     proportion power calculation for binomial distribution (arcsine transformation) 
+
+              h = 0.1400746
+              n = 400
+      sig.level = 0.05
+          power = 0.8
+    alternative = two.sided</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="escenario-3-muestra-para-estimar-diferencia-de-medias-de-dos-poblaciones-independientes-con-varianzas-desiguales" class="level2">
+<h2 class="anchored" data-anchor-id="escenario-3-muestra-para-estimar-diferencia-de-medias-de-dos-poblaciones-independientes-con-varianzas-desiguales">Escenario 3: Muestra para estimar diferencia de medias de dos poblaciones independientes con varianzas desiguales</h2>
+<p>Este escenario tiene la finalidad de evaluar si existen diferencias significativas entre los promedios cuantitativos de dos grupos no relacionados.</p>
+<section id="resolución-2" class="level3">
+<h3 class="anchored" data-anchor-id="resolución-2">Resolución</h3>
+<ol type="1">
+<li><p><strong>Cálculo del efecto del diseño</strong>:</p>
+<p>Uso de la función <code>cohen.ES</code></p></li>
+<li><p><strong>Cálculo del tamaño de muestra</strong>:</p>
+<p>Uso de la función <code>pwr.t.test</code> con <code>type="two.sample"</code></p></li>
+<li><p><strong>Cálculo del poder de estudio</strong>:</p>
+<p>Uso de la función <code>pwr.t.test</code> con <code>type="two.sample"</code></p></li>
+<li><p><strong>Cálculo del efecto con los valores ya encontrados</strong>:</p>
+<p>Uso de la función <code>pwr.t.test</code> con <code>type="two.sample"</code></p></li>
+</ol>
+</section>
+<section id="caso-práctico-1" class="level3">
+<h3 class="anchored" data-anchor-id="caso-práctico-1"><strong>Caso práctico</strong></h3>
+<p>Un ensayo clínico evalúa la reducción de presión arterial entre dos grupos independientes asumiendo un tamaño de efecto mediano (<span class="math inline">\(d=0.5\)</span>).</p>
+<p><strong>Supuestos</strong></p>
+<ul>
+<li><p><strong>2 colas</strong></p></li>
+<li><p><strong>Ho: m2=m1 vs Ha: m2!=m1</strong> &lt;- Comparación de desigualdad entre dos medias</p></li>
+<li><p><strong>sd1=5.5</strong> &lt;- Desviación estándar de la media 1</p></li>
+<li><p><strong>sd2=5</strong> &lt;- Desviación estándar de la media 2</p></li>
+<li><p><strong>p=0.05</strong> &lt;- Nivel de significancia</p></li>
+<li><p><strong>power=0.80</strong> &lt;- Poder de estudio</p></li>
+</ul>
+<p>Para resolverlo, empleamos los pasos ya mencionados:</p>
+<p>-&gt; <strong>Cálculo del efecto de diseño esperado</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>efecto_u2_u1<span class="ot">&lt;-</span><span class="fu">cohen.ES</span>(<span class="at">test=</span><span class="st">"t"</span>,<span class="at">size=</span><span class="st">"medium"</span>) </span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>efecto_u2_u1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+     Conventional effect size from Cohen (1982) 
+
+           test = t
+           size = medium
+    effect.size = 0.5</code></pre>
+</div>
+</div>
+<p><em>Ojo: Como consideraciones, grande se considera 0.8.</em></p>
+<p>-&gt; <strong>n</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pwr.t.test</span>(<span class="at">d=</span>.<span class="dv">5</span>, <span class="at">sig.level=</span><span class="fl">0.05</span>, <span class="at">power=</span><span class="fl">0.80</span>, <span class="at">type=</span><span class="st">"two.sample"</span>,<span class="at">alternative=</span><span class="st">"two.sided"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+     Two-sample t test power calculation 
+
+              n = 63.76561
+              d = 0.5
+      sig.level = 0.05
+          power = 0.8
+    alternative = two.sided
+
+NOTE: n is number in *each* group</code></pre>
+</div>
+</div>
+<p>-&gt; <strong>Poder</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pwr.t.test</span>(<span class="at">d=</span>.<span class="dv">5</span>, <span class="at">n=</span><span class="dv">70</span>, <span class="at">sig.level=</span><span class="fl">0.05</span>, <span class="at">type=</span><span class="st">"two.sample"</span>,<span class="at">alternative=</span><span class="st">"two.sided"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+     Two-sample t test power calculation 
+
+              n = 70
+              d = 0.5
+      sig.level = 0.05
+          power = 0.8358223
+    alternative = two.sided
+
+NOTE: n is number in *each* group</code></pre>
+</div>
+</div>
+<p>-&gt; <strong>Efecto de diseño</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pwr.t.test</span>(<span class="at">n=</span><span class="dv">70</span>, <span class="at">sig.level=</span><span class="fl">0.05</span>, <span class="at">power=</span><span class="fl">0.80</span>, <span class="at">type=</span><span class="st">"two.sample"</span>,<span class="at">alternative=</span><span class="st">"two.sided"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+     Two-sample t test power calculation 
+
+              n = 70
+              d = 0.4768651
+      sig.level = 0.05
+          power = 0.8
+    alternative = two.sided
+
+NOTE: n is number in *each* group</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="escenario-4-muestra-para-estimar-diferencia-de-proporciones-en-dos-poblaciones-independientes" class="level2">
+<h2 class="anchored" data-anchor-id="escenario-4-muestra-para-estimar-diferencia-de-proporciones-en-dos-poblaciones-independientes">Escenario 4: Muestra para estimar diferencia de proporciones en dos poblaciones independientes</h2>
+<p>Este escenario tiene la finalidad de comparar las proporciones o tasas de éxito entre dos muestras totalmente independientes.</p>
+<section id="resolución-3" class="level3">
+<h3 class="anchored" data-anchor-id="resolución-3">Resolución</h3>
+<ol type="1">
+<li><p><strong>Cálculo del efecto del diseño</strong>:</p>
+<p>Uso de la función <code>ES.h</code></p></li>
+<li><p><strong>Cálculo del tamaño de muestra</strong>:</p>
+<p>Uso de la función <code>pwr.2p.test</code></p></li>
+<li><p><strong>Cálculo del poder de estudio</strong>:</p>
+<p>Uso de la función <code>pwr.2p.test</code></p></li>
+<li><p><strong>Cálculo del efecto con los valores ya encontrados</strong>:</p>
+<p>Uso de la función <code>pwr.2p.test</code>[</p></li>
+</ol>
+</section>
+<section id="caso-práctico-2" class="level3">
+<h3 class="anchored" data-anchor-id="caso-práctico-2"><strong>Caso práctico</strong></h3>
+<p>Se desea comparar la tasa de eficacia entre el tratamiento convencional (<span class="math inline">\(p1 = 10\%\)</span>) y un tratamiento nuevo (<span class="math inline">\(p2 = 50\%\)</span>), esperando una diferencia del <span class="math inline">\(40\%\)</span> .</p>
+<p><strong>Supuestos</strong></p>
+<ul>
+<li><p><strong>2 colas</strong></p></li>
+<li><p><strong>Ho: p2=p1 vs Ha: p2!=p1</strong> &lt;- Hipótesis de igualdad vs diferencia entre proporciones</p></li>
+<li><p><strong>p1=10%</strong> &lt;- Proporción esperada en el grupo 1</p></li>
+<li><p><strong>diff=40% (o p2=50%)</strong> &lt;- Diferencia esperada o proporción en el grupo 2</p></li>
+<li><p><strong>p=0.05</strong> &lt;- Nivel de significancia</p></li>
+<li><p><strong>power=0.80</strong> &lt;- Poder de estudio</p></li>
+</ul>
+<p>Para resolverlo, empleamos los pasos ya mencionados:</p>
+<p>-&gt; <strong>Calculo del efecto de diseño esperado</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>efecto_p2_p1<span class="ot">&lt;-</span><span class="fu">ES.h</span>(<span class="fl">0.5</span>,<span class="fl">0.1</span>) </span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>efecto_p2_p1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.9272952</code></pre>
+</div>
+</div>
+<p>-&gt; <strong>n</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pwr.2p.test</span>(<span class="at">h=</span>efecto_p2_p1, <span class="at">sig.leve =</span><span class="fl">0.05</span>, <span class="at">power=</span><span class="fl">0.80</span>,<span class="at">alternative=</span><span class="st">"two.sided"</span>)   <span class="co">#siempre lo redondeas a la poblacion superior y lo multiplicas por dos porque hay dos poblaciones</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+     Difference of proportion power calculation for binomial distribution (arcsine transformation) 
+
+              h = 0.9272952
+              n = 18.25579
+      sig.level = 0.05
+          power = 0.8
+    alternative = two.sided
+
+NOTE: same sample sizes</code></pre>
+</div>
+</div>
+<p>-&gt; <strong>Poder</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pwr.2p.test</span>(<span class="at">h=</span>efecto_p2_p1, <span class="at">n=</span><span class="dv">20</span> ,<span class="at">sig.level=</span><span class="fl">0.05</span>, <span class="at">alternative=</span><span class="st">"two.sided"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+     Difference of proportion power calculation for binomial distribution (arcsine transformation) 
+
+              h = 0.9272952
+              n = 20
+      sig.level = 0.05
+          power = 0.8345749
+    alternative = two.sided
+
+NOTE: same sample sizes</code></pre>
+</div>
+</div>
+<p>-&gt; <strong>Efecto de diseño:</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pwr.2p.test</span>(<span class="at">n=</span><span class="dv">20</span>, <span class="at">sig.leve =</span><span class="fl">0.05</span>, <span class="at">power=</span><span class="fl">0.80</span>,<span class="at">alternative=</span><span class="st">"two.sided"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+     Difference of proportion power calculation for binomial distribution (arcsine transformation) 
+
+              h = 0.8859385
+              n = 20
+      sig.level = 0.05
+          power = 0.8
+    alternative = two.sided
+
+NOTE: same sample sizes</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="escenario-5-muestra-para-estimar-diferencia-de-medias-de-dos-muestras-dependientes-con-varianzas-iguales" class="level2">
+<h2 class="anchored" data-anchor-id="escenario-5-muestra-para-estimar-diferencia-de-medias-de-dos-muestras-dependientes-con-varianzas-iguales">Escenario 5: Muestra para estimar diferencia de medias de dos muestras dependientes con varianzas iguales</h2>
+<p>Este escenario tiene la finalidad de evaluar cambios en una variable continua en los mismos participantes evaluados en dos momentos distintos (estudios antes-después o pareados).</p>
+<section id="resolución-4" class="level3">
+<h3 class="anchored" data-anchor-id="resolución-4">Resolución</h3>
+<ol type="1">
+<li><p><strong>Cálculo del efecto del diseño</strong>: <span class="math display">\[d = \frac{\vert{}0 - d0\vert{}}{sd}\]</span></p></li>
+<li><p><strong>Cálculo del tamaño de muestra</strong>:</p>
+<p>Uso de la función <code>pwr.t.test</code> con <code>type="paired"</code></p></li>
+<li><p><strong>Cálculo del poder de estudio</strong>:</p>
+<p>Uso de la función <code>pwr.t.test</code> con <code>type="paired"</code></p></li>
+<li><p><strong>Cálculo del efecto con los valores ya encontrados</strong>:</p>
+<p>Uso de la función <code>pwr.t.test</code> con <code>type="paired"</code></p></li>
+</ol>
+</section>
+<section id="caso-práctico-3" class="level3">
+<h3 class="anchored" data-anchor-id="caso-práctico-3">Caso práctico</h3>
+<p>Se desea evaluar la reducción promedio del peso en participantes antes y después de un plan nutricional, esperando una diferencia de <span class="math inline">\(5\)</span> unidades con una desviación estándar de <span class="math inline">\(5\)</span> (<span class="math inline">\(d=1\)</span>).</p>
+<p><strong>Supuestos</strong></p>
+<ul>
+<li><p><strong>2 colas</strong></p></li>
+<li><p><strong>Ho: d=d0 vs Ha: d!=d0</strong> &lt;- Comparación de diferencias intragrupo</p></li>
+<li><p><strong>d0=5</strong> &lt;- Diferencia esperada de medias</p></li>
+<li><p><strong>sd1=sd2=sd, sd=5</strong> &lt;- Desviación estándar asumida igual en ambas mediciones</p></li>
+<li><p><strong>p=0.05</strong> &lt;- Nivel de significancia</p></li>
+<li><p><strong>power=0.80</strong> &lt;- Poder de estudio</p></li>
+</ul>
+<p>Para resolverlo, empleamos los pasos ya mencionados:</p>
+<p>-&gt; <strong>Cálculo del efecto de diseño esperado:</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>efecto_u2p_u1p<span class="ot">&lt;-</span>(<span class="dv">0-5</span>)<span class="sc">/</span><span class="dv">5</span> </span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>efecto_u2p_u1p</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -1</code></pre>
+</div>
+</div>
+<p>-&gt; <strong>n:</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pwr.t.test</span>(<span class="at">d=</span><span class="dv">1</span>, <span class="at">power=</span><span class="fl">0.8</span>, <span class="at">sig.level=</span><span class="fl">0.05</span>, <span class="at">type=</span><span class="st">"paired"</span>, <span class="at">alternative=</span><span class="st">"two.sided"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+     Paired t test power calculation 
+
+              n = 9.93785
+              d = 1
+      sig.level = 0.05
+          power = 0.8
+    alternative = two.sided
+
+NOTE: n is number of *pairs*</code></pre>
+</div>
+</div>
+<p>-&gt; <strong>Poder:</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pwr.t.test</span>(<span class="at">d=</span><span class="dv">1</span>, <span class="at">n=</span><span class="dv">40</span>, <span class="at">sig.level=</span><span class="fl">0.05</span>, <span class="at">type=</span><span class="st">"paired"</span>, <span class="at">alternative=</span><span class="st">"two.sided"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+     Paired t test power calculation 
+
+              n = 40
+              d = 1
+      sig.level = 0.05
+          power = 0.9999868
+    alternative = two.sided
+
+NOTE: n is number of *pairs*</code></pre>
+</div>
+</div>
+<p>-&gt; <strong>Efecto de diseño:</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pwr.t.test</span>(<span class="at">n=</span><span class="dv">40</span>, <span class="at">power=</span><span class="fl">0.8</span>, <span class="at">sig.level=</span><span class="fl">0.05</span>, <span class="at">type=</span><span class="st">"paired"</span>, <span class="at">alternative=</span><span class="st">"two.sided"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+     Paired t test power calculation 
+
+              n = 40
+              d = 0.4542725
+      sig.level = 0.05
+          power = 0.8
+    alternative = two.sided
+
+NOTE: n is number of *pairs*</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="escenario-6-muestra-para-análisis-de-tipo-anova-unidireccional-comparación-de-más-de-dos-medias" class="level2">
+<h2 class="anchored" data-anchor-id="escenario-6-muestra-para-análisis-de-tipo-anova-unidireccional-comparación-de-más-de-dos-medias">Escenario 6: Muestra para análisis de tipo anova unidireccional (comparación de más de dos medias)</h2>
+<p>Este escenario tiene la finalidad de calcular el tamaño muestral necesario para comparar las medias de más de dos grupos independientes basándose en un tamaño de efecto estandarizado (<span class="math inline">\(f\)</span>).</p>
+<section id="resolución-5" class="level3">
+<h3 class="anchored" data-anchor-id="resolución-5">Resolución</h3>
+<ol type="1">
+<li><p><strong>Cálculo del efecto del diseño</strong>:</p>
+<p>Uso de la función <code>cohen.ES</code> con <code>test="anov"</code></p></li>
+<li><p><strong>Cálculo del tamaño de muestra</strong>:</p>
+<p>Uso de la función <code>pwr.anova.test</code></p></li>
+<li><p><strong>Cálculo del poder de estudio</strong>:</p>
+<p>Uso de la función <code>pwr.anova.test</code></p></li>
+<li><p><strong>Cálculo del efecto con los valores ya encontrados</strong>:</p>
+<p>Uso de la función <code>pwr.anova.test</code></p></li>
+</ol>
+</section>
+<section id="caso-práctico-4" class="level3">
+<h3 class="anchored" data-anchor-id="caso-práctico-4">Caso práctico</h3>
+<p>Se comparan <span class="math inline">\(3\)</span> tratamientos (<span class="math inline">\(k=3\)</span>) con medias poblacionales hipotéticas de <span class="math inline">\(50\)</span>, <span class="math inline">\(60\)</span> y <span class="math inline">\(70\)</span>, y una varianza del error de <span class="math inline">\(900\)</span>, asumiendo un tamaño del efecto moderado (<span class="math inline">\(f=0.25\)</span>).</p>
+<p><strong>Supuestos</strong></p>
+<ul>
+<li><p><strong>2 colas</strong></p></li>
+<li><p><strong>Ho: delta = 0 vs Ha: delta != 0</strong> &lt;- Inexistencia vs existencia de diferencias entre alguna media</p></li>
+<li><p><strong>m1=50, m2=60, m3=70</strong> &lt;- Medias teóricas para 3 grupos</p></li>
+<li><p><strong>var error=900</strong> &lt;- Varianza del error residual</p></li>
+<li><p><strong>p=0.05</strong> &lt;- Nivel de significancia</p></li>
+<li><p><strong>power=0.80</strong> &lt;- Poder de estudio</p></li>
+</ul>
+<p>Para resolverlo, empleamos los pasos ya mencionados:</p>
+<p>-&gt; <strong>Cálculo del efecto de diseño esperado</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>efecto_anova<span class="ot">&lt;-</span><span class="fu">cohen.ES</span>(<span class="at">test=</span><span class="st">"anov"</span>,<span class="at">size=</span><span class="st">"medium"</span>) </span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>efecto_anova</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+     Conventional effect size from Cohen (1982) 
+
+           test = anov
+           size = medium
+    effect.size = 0.25</code></pre>
+</div>
+</div>
+<p>-&gt; <strong>n</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pwr.anova.test</span>(<span class="at">f=</span><span class="fl">0.25</span>, <span class="at">k=</span><span class="dv">3</span>, <span class="at">sig.level=</span><span class="fl">0.05</span>, <span class="at">power=</span><span class="fl">0.80</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+     Balanced one-way analysis of variance power calculation 
+
+              k = 3
+              n = 52.3966
+              f = 0.25
+      sig.level = 0.05
+          power = 0.8
+
+NOTE: n is number in each group</code></pre>
+</div>
+</div>
+<p>-&gt; <strong>Poder</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pwr.anova.test</span>(<span class="at">f=</span><span class="fl">0.25</span>, <span class="at">k=</span><span class="dv">3</span>, <span class="at">n=</span><span class="dv">60</span>, <span class="at">sig.level=</span><span class="fl">0.05</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+     Balanced one-way analysis of variance power calculation 
+
+              k = 3
+              n = 60
+              f = 0.25
+      sig.level = 0.05
+          power = 0.8546381
+
+NOTE: n is number in each group</code></pre>
+</div>
+</div>
+<p>-&gt; <strong>Efecto de diseño</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pwr.anova.test</span>(<span class="at">k=</span><span class="dv">3</span>, <span class="at">n=</span><span class="dv">60</span>, <span class="at">sig.level=</span><span class="fl">0.05</span>, <span class="at">power=</span><span class="fl">0.80</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+     Balanced one-way analysis of variance power calculation 
+
+              k = 3
+              n = 60
+              f = 0.2333207
+      sig.level = 0.05
+          power = 0.8
+
+NOTE: n is number in each group</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="escenario-7-muestra-para-estimar-la-media-entre-dos-o-más-poblaciones-independientes" class="level2">
+<h2 class="anchored" data-anchor-id="escenario-7-muestra-para-estimar-la-media-entre-dos-o-más-poblaciones-independientes">Escenario 7: Muestra para estimar la media entre dos o más poblaciones independientes</h2>
+<p>Este escenario tiene la finalidad de calcular el tamaño de muestra e inferir el efecto para un ANOVA de una vía cuando se introducen directamente los vectores de medias y la varianza intragrupo observada.</p>
+<section id="resolución-6" class="level3">
+<h3 class="anchored" data-anchor-id="resolución-6">Resolución</h3>
+<ol type="1">
+<li><p><strong>Cálculo del tamaño de muestra</strong>:</p>
+<p>Uso de la función <code>power.anova.test</code> especificando <code>n=NULL</code></p></li>
+<li><p><strong>Cálculo del poder de estudio</strong>:</p>
+<p>Uso de la función <code>power.anova.test</code> especificando <code>power=NULL</code></p></li>
+<li><p><strong>Cálculo del efecto de diseño</strong>: <span class="math display">\[\text{Efecto} = \frac{\max(\text{medias}) - \min(\text{medias})}{\text{SD común}}\]</span></p></li>
+</ol>
+</section>
+<section id="caso-práctico-5" class="level3">
+<h3 class="anchored" data-anchor-id="caso-práctico-5">Caso práctico</h3>
+<p>Se desea evaluar la diferencia entre <span class="math inline">\(3\)</span> poblaciones independientes con medias esperadas de <span class="math inline">\(550\)</span>, <span class="math inline">\(598\)</span> y <span class="math inline">\(610\)</span>, y una varianza dentro de los grupos de <span class="math inline">\(6400\)</span>.</p>
+<p><strong>Supuestos</strong></p>
+<ul>
+<li><p><strong>Grupos = 3</strong> (<span class="math inline">\(k=3\)</span>)</p></li>
+<li><p><strong>Vector de medias: c(550, 598, 610)</strong></p></li>
+<li><p><strong>Varianza intra-grupo (within.var) = 6400</strong></p></li>
+<li><p><strong>p=0.05</strong> &lt;- Nivel de significancia</p></li>
+<li><p><strong>power=0.80</strong> &lt;- Poder de estudio</p></li>
+</ul>
+<p>Para resolverlo, empleamos los pasos ya mencionados:</p>
+<p><strong>-&gt; Cálculo del tamaño de muestra mínimo requerido (n por grupo)</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>grupos <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">550</span>,<span class="dv">598</span>,<span class="dv">610</span>) </span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">power.anova.test</span>(<span class="at">groups=</span><span class="fu">length</span>(grupos), <span class="at">between.var =</span> <span class="fu">var</span>(grupos), <span class="at">within.var=</span><span class="dv">6400</span>, <span class="at">power =</span> <span class="fl">0.8</span>, <span class="at">sig.level =</span> <span class="fl">0.05</span>, <span class="at">n=</span><span class="cn">NULL</span>)  </span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>p</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+     Balanced one-way analysis of variance power calculation 
+
+         groups = 3
+              n = 31.6066
+    between.var = 1008
+     within.var = 6400
+      sig.level = 0.05
+          power = 0.8
+
+NOTE: n is number in each group</code></pre>
+</div>
+</div>
+<p>Se requiere un total de 32*3=96 sujetos para una potencia de 0.8.</p>
+<p>-&gt; <strong>Poder:</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">=</span><span class="dv">40</span> </span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>p_anova <span class="ot">&lt;-</span> <span class="fu">power.anova.test</span>(<span class="at">groups=</span><span class="dv">3</span>, <span class="at">between.var =</span> <span class="fu">var</span>(grupos), <span class="at">within.var=</span><span class="dv">6400</span>, <span class="at">power =</span> <span class="cn">NULL</span>, <span class="at">sig.level =</span> <span class="fl">0.05</span>, <span class="at">n=</span>n)  </span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>p_anova</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+     Balanced one-way analysis of variance power calculation 
+
+         groups = 3
+              n = 40
+    between.var = 1008
+     within.var = 6400
+      sig.level = 0.05
+          power = 0.8906466
+
+NOTE: n is number in each group</code></pre>
+</div>
+</div>
+<p>Entonces, cuando tengamos 40 sujetos en cada grupo, tendremos una potencia de 0.89 o 89 %.</p>
+<p>Observemos la relación entre el tamaño de la muestra y el poder de estudio.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(n,p_anova<span class="sc">$</span>power)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Escenarios_tamaño_de_muestra_files/figure-html/unnamed-chunk-29-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>-&gt; <strong>Tamaño del efecto</strong></p>
+<p>Con base en el cálculo anterior, el tamaño del efecto es la diferencia de las medias entre el grupo más bajo y el grupo más alto sobre la desviación estándar común media.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">610-550</span>)<span class="sc">/</span><span class="dv">80</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.75</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="escenario-8prueba-de-proporción-de-más-de-dos-muestras" class="level2">
+<h2 class="anchored" data-anchor-id="escenario-8prueba-de-proporción-de-más-de-dos-muestras">Escenario 8:Prueba de proporción de más de dos muestras</h2>
+<p>Este escenario tiene la finalidad de evaluar el poder de estudio y el tamaño muestral en diseños experimentales factoriales (<span class="math inline">\(2 \times 2\)</span>) analizando dos factores principales simultáneamente.</p>
+<section id="resolución-7" class="level3">
+<h3 class="anchored" data-anchor-id="resolución-7">Resolución</h3>
+<ol type="1">
+<li><strong>Cálculo del poder de estudio</strong>:</li>
+</ol>
+<pre><code>Uso de la función `pwr.2way` del paquete `pwr2`</code></pre>
+<ol start="2" type="1">
+<li><p><strong>Cálculo del tamaño de muestra</strong>:</p>
+<p>Uso de la función <code>ss.2way</code> del paquete <code>pwr2</code></p></li>
+</ol>
+</section>
+<section id="caso-práctico-6" class="level3">
+<h3 class="anchored" data-anchor-id="caso-práctico-6">Caso práctico</h3>
+<p>Se plantea un ANOVA de dos vías con <span class="math inline">\(2\)</span> factores de <span class="math inline">\(2\)</span> niveles cada uno (<span class="math inline">\(2 \times 2\)</span>), evaluando <span class="math inline">\(40\)</span> participantes por celda/grupo[cite: 1]. Se asume un tamaño de efecto moderado (<span class="math inline">\(f_A = 0.25\)</span>) para el Factor A y grande (<span class="math inline">\(f_B = 0.55\)</span>) para el Factor B.</p>
+<p><strong>Supuestos</strong></p>
+<ul>
+<li><p><strong>Diseño factorial</strong> <span class="math inline">\(2 \times 2\)</span> (a = 2, b = 2)</p></li>
+<li><p><strong>size.A = 40, size.B = 40</strong> &lt;- Participantes por nivel</p></li>
+<li><p><strong>f.A = 0.25</strong> &lt;- Efecto moderado para el Factor A</p></li>
+<li><p><strong>f.B = 0.55</strong> &lt;- Efecto grande para el Factor B</p></li>
+<li><p><strong>alpha = 0.05</strong> &lt;- Nivel de significancia</p></li>
+<li><p><strong>beta = 0.20</strong> &lt;- Para un poder del <span class="math inline">\(80\%\)</span> (<span class="math inline">\(1 - \beta\)</span>)</p></li>
+</ul>
+<p>Para resolverlo, empleamos los pasos ya mencionados:</p>
+<p>-&gt; <strong>Poder:</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pwr.2way</span>(<span class="at">a=</span><span class="dv">2</span>, <span class="at">b=</span><span class="dv">2</span>, <span class="at">alpha=</span><span class="fl">0.05</span>, <span class="at">size.A=</span><span class="dv">40</span>, <span class="at">size.B=</span><span class="dv">40</span>, <span class="at">f.A=</span><span class="fl">0.25</span>, <span class="at">f.B=</span><span class="fl">0.55</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+     Balanced two-way analysis of variance power calculation 
+
+              a = 2
+              b = 2
+            n.A = 40
+            n.B = 40
+      sig.level = 0.05
+        power.A = 0.8815781
+        power.B = 0.9999996
+          power = 0.8815781
+
+NOTE: power is the minimum power among two factors</code></pre>
+</div>
+</div>
+<p>El poder de estudio para el efecto principal A es 88% y para el efecto B es 1,00%.</p>
+<p>-&gt; <strong>n:</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ss.2way</span>(<span class="at">a=</span><span class="dv">2</span>, <span class="at">b=</span><span class="dv">2</span>, <span class="at">alpha=</span><span class="fl">0.05</span>, <span class="at">beta=</span><span class="fl">0.20</span>, <span class="at">f.A=</span><span class="fl">0.25</span>, <span class="at">f.B=</span><span class="fl">0.55</span>, <span class="at">delta.A=</span><span class="cn">NULL</span>, <span class="at">delta.B=</span><span class="cn">NULL</span>, <span class="at">sigma.A=</span><span class="cn">NULL</span>, <span class="at">sigma.B=</span><span class="cn">NULL</span>, <span class="at">B=</span><span class="dv">40</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+     Balanced two-way analysis of variance sample size adjustment 
+
+              a = 2
+              b = 2
+      sig.level = 0.05
+          power = 0.8
+              n = 32
+
+NOTE: n is number in each group, total sample = 128</code></pre>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
